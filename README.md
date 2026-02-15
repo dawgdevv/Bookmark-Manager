@@ -1,22 +1,31 @@
 # BM-77 Bookmark Manager
 
-> **Deployment Note**: Backend is deployed on Render free tier. Free tier instances spin down after 15 minutes of inactivity and take 30-60 seconds to wake up on the first request. Subsequent requests will be fast.
+> **Deployment Note**: Backend is deployed on Render free tier. Free tier instances spin down after 15 minutes of inactivity and take 30-60 seconds to wake up on the first request.
 
-A bookmark manager to save, organize, and search your favorite links. Features include tagging, real-time search, and a brutalist-industrial dark theme UI.
+A bookmark manager to save, organize, and search your favorite links.
 
 ![Screenshot](image.png)
 
 ## Tech Stack
 
 - **Frontend**: React + TypeScript + Vite
-- **Backend**: Express + TypeScript (in-memory storage)
-- **Styling**: Custom CSS (no framework)
+- **Backend**: Express + TypeScript
+- **Storage**: In-memory (JSON file)
+- **Styling**: Custom CSS (brutalist-industrial theme)
+
+## Features
+
+- Save bookmarks with title, URL, description, and tags
+- Search by title, URL, or tags
+- Filter by clicking tags
+- Create, edit, delete bookmarks
+- Responsive dark theme UI
 
 ## Quick Start
 
 ```bash
-npm run install:all   # Install dependencies
-npm run dev           # Start both services
+npm run install:all
+npm run dev
 ```
 
 - **Backend**: http://localhost:3001
