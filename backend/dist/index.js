@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { InMemoryBookmarkRepository } from './repositories/bookmark.repository.js';
+import { FileBookmarkRepository } from './repositories/file.repository.js';
 import { BookmarkService } from './services/bookmark.service.js';
 import { createBookmarkRouter } from './routes/bookmark.routes.js';
 import { errorHandler } from './middleware/error.middleware.js';
@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // CORS configuration for frontend
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    origin: ['http://localhost:5173', 'https://bookmark-manager-tau-two.vercel.app'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -19,7 +19,7 @@ app.use(cors({
 app.use(express.json());
 app.use(requestLogger);
 app.use(rateLimit);
-const bookmarkRepository = new InMemoryBookmarkRepository();
+const bookmarkRepository = new FileBookmarkRepository();
 bookmarkRepository.seed(seedBookmarks);
 const bookmarkService = new BookmarkService(bookmarkRepository);
 app.use('/api/bookmarks', createBookmarkRouter(bookmarkService));
