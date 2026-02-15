@@ -8,22 +8,6 @@ A production-grade bookmark manager with a **brutalist-industrial themed** React
 
 ## Quick Start
 
-### Option 1: Using the Start Script (Recommended)
-
-```bash
-# Make sure dependencies are installed first
-npm run install:all
-
-# Start both frontend and backend
-./start.sh
-```
-
-This will start:
-- **Backend**: http://localhost:3001
-- **Frontend**: http://localhost:5173
-
-### Option 2: Manual Start
-
 Terminal 1 - Backend:
 ```bash
 cd backend
@@ -52,9 +36,7 @@ bookmark-manager/
 │   │   ├── services/     # Business logic
 │   │   └── utils/        # Seed data
 │   └── package.json
-├── start.sh              # Quick start script
-├── test-connection.sh    # Connection test
-└── package.json          # Root package with scripts
+         # Root package with scripts
 ```
 
 ## API Endpoints
