@@ -1,0 +1,135 @@
+.empty-state {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: var(--space-2xl);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  overflow: hidden;
+}
+
+.empty-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.grid-line {
+  position: absolute;
+  background-color: var(--color-border);
+}
+
+.grid-line.horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0.3;
+}
+
+.grid-line.vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  opacity: 0.3;
+}
+
+.empty-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.empty-icon {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.icon-bracket {
+  color: var(--color-accent-dim);
+}
+
+.icon-slash {
+  color: var(--color-accent);
+}
+
+.empty-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+}
+
+.empty-message {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  max-width: 300px;
+}
+
+.empty-actions {
+  margin-top: var(--space-md);
+}
+
+.empty-decoration {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: var(--color-border);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.empty-decoration.top-left {
+  top: var(--space-lg);
+  left: var(--space-lg);
+  border-width: 3px 0 0 3px;
+}
+
+.empty-decoration.top-right {
+  top: var(--space-lg);
+  right: var(--space-lg);
+  border-width: 3px 3px 0 0;
+}
+
+.empty-decoration.bottom-left {
+  bottom: var(--space-lg);
+  left: var(--space-lg);
+  border-width: 0 0 3px 3px;
+}
+
+.empty-decoration.bottom-right {
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  border-width: 0 3px 3px 0;
+}
+
+@media (max-width: 640px) {
+  .empty-state {
+    min-height: 300px;
+    padding: var(--space-xl);
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+  
+  .empty-title {
+    font-size: 1.25rem;
+  }
+  
+  .empty-decoration {
+    width: 24px;
+    height: 24px;
+  }
+}
