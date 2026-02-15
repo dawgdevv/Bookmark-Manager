@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { InMemoryBookmarkRepository } from './repositories/bookmark.repository.js'
+import { FileBookmarkRepository } from './repositories/file.repository.js'
 import { BookmarkService } from './services/bookmark.service.js'
 import { createBookmarkRouter } from './routes/bookmark.routes.js'
 import { errorHandler } from './middleware/error.middleware.js'
@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(requestLogger)
 app.use(rateLimit)
 
-const bookmarkRepository = new InMemoryBookmarkRepository()
+const bookmarkRepository = new FileBookmarkRepository()
 bookmarkRepository.seed(seedBookmarks)
 
 const bookmarkService = new BookmarkService(bookmarkRepository)

@@ -4,8 +4,12 @@ services:
     runtime: node
     plan: free
     rootDir: backend
-    buildCommand: npm install --include=dev && npm run build
+    buildCommand: npm install --include=dev && npm run build && mkdir -p data
     startCommand: npm start
+    disk:
+      name: bookmark-data
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
