@@ -4,7 +4,7 @@
 
 A production-grade bookmark manager with a **brutalist-industrial themed** React frontend and Express backend.
 
-![Architecture](architecture.png)
+![alt text](image.png)
 
 ## Quick Start
 
