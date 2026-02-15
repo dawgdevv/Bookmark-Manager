@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs'
-import { join } from 'path'
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
+import { join, dirname } from 'path'
 import type { Bookmark, CreateBookmarkDto, UpdateBookmarkDto, BookmarkFilters } from '../types/index.js'
 import { BookmarkRepository } from './bookmark.repository.js'
 
@@ -27,6 +27,10 @@ export class FileBookmarkRepository implements BookmarkRepository {
 
   private save(): void {
     try {
+      const dir = dirname(this.filePath)
+      if (!existsSync(dir)) {
+        mkdirSync(dir, { recursive: true })
+      }
       const bookmarks = Array.from(this.bookmarks.values())
       writeFileSync(this.filePath, JSON.stringify(bookmarks, null, 2))
     } catch (error) {
