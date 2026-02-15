@@ -1,5 +1,7 @@
 # BM-77 Bookmark Manager
 
+> **Deployment Note**: Backend is deployed on Render free tier (cold starts may cause initial delay)
+
 A production-grade bookmark manager with a **brutalist-industrial themed** React frontend and Express backend.
 
 ![Architecture](architecture.png)
